@@ -67,6 +67,7 @@ class PushManager implements PushManagerInterface
                 'device'  => $this->device,
                 'message' => $push->getMessage(),
                 'title'   => $push->getTitle(),
+                'priority' => $push->getPriority()
             ));
         } catch (WebServiceException $e) {
             throw new WebServiceException('PushOver distant web service timed out');

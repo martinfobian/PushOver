@@ -14,6 +14,7 @@ class Push implements PushInterface
     protected $message;
     protected $date;
     protected $hasBeenSent;
+    protected $priority;
 
     /**
      * Constructor.
@@ -24,6 +25,7 @@ class Push implements PushInterface
         $this->message     = null;
         $this->date        = new \DateTime();
         $this->hasBeenSent = false;
+        $this->priority    = 0;
     }
 
     /**
@@ -36,6 +38,22 @@ class Push implements PushInterface
         return $this->message;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
+    }
+    
     /**
      * {@inheritdoc}
      */
